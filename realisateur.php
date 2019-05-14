@@ -24,10 +24,7 @@
 <body>
   <?php
   require_once 'bdd.php';
-  $requete = "SELECT * FROM realisateurs WHERE id_realisateurs=" . $_GET["id_realisateurs"];
-  $reponse = $bdd->query($requete);
-  while ($donnees = $reponse->fetch())
-  {
+
     ?>
   <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
@@ -51,13 +48,13 @@
 
     <!--  pour le titre -->
     <div class="hoofd">
-      <h1 class="text-uppercase"><?php echo $donnees['Nom']; echo $donnees ['Prenom'];?></h1>
+      <h1 class="text-uppercase"></h1>
       <div class="fleches_2">
         <img class="fleche_g animated fadeInLeft" src="img/ligne_g.png">
         <img class="fleche_d animated fadeInRight" src="img/ligne_d.png">
       </div>
     </div>
-  <?php } ?>
+
 
 
     <!--<div class="header_films">

@@ -67,7 +67,7 @@
       $requete = "SELECT * FROM realisateurs";
       $reponse = $bdd->query($requete);
 
-      while ($donnee = $reponse->fetch()) {
+$donnee = $reponse->fetch();
 
       ?>
 
@@ -82,7 +82,7 @@
     <p class="mb-1"><?php echo $donnees['Nom'].' '.$donnees['Prenom'];?></p>
     <small>Donec id elit non mi porta.</small>
   </a>
-<?php } ?>
+
   <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Production</h5>
