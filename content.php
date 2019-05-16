@@ -64,10 +64,12 @@
 <?php
           }
 
-      $requete = "SELECT * FROM realisateurs";
+      $requete = "SELECT * FROM realisateurs WHERE Nom as n, Prenom as n";
       $reponse = $bdd->query($requete);
+      $donnees = $reponse->fetch();
 
-$donnee = $reponse->fetch();
+
+
 
       ?>
 
@@ -75,14 +77,12 @@ $donnee = $reponse->fetch();
     <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5">
 
     <div class="list-group">
-  <a href="realisateur.php?id_realisateurs=<?php echo $donnees['id_realisateurs'];?>" class="list-group-item list-group-item-action">
+  <a href="realisateur.php?id=<?php echo $donnees['id_realisateur'];?>" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Réalisateur</h5>
     </div>
-    <p class="mb-1"><?php echo $donnees['Nom'].' '.$donnees['Prenom'];?></p>
-    <small>Donec id elit non mi porta.</small>
+    <p class="mb-1"><?php echo $donnees['id_realisateur'];?></p>
   </a>
-
   <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Production</h5>

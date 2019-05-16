@@ -24,6 +24,10 @@
 <body>
   <?php
   require_once 'bdd.php';
+  $requete = "SELECT * FROM realisateurs WHERE id_realisateur=\'' . $_GET['id_realisateur'] .'\'';
+  $reponse = $bdd->query($requete);
+  while ($donnees = $reponse) {
+
 
     ?>
   <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -48,7 +52,7 @@
 
     <!--  pour le titre -->
     <div class="hoofd">
-      <h1 class="text-uppercase"></h1>
+      <h1 class="text-uppercase"><?php echo $donnees['Nom'].' '.$donnees['Prenom'];?></h1>
       <div class="fleches_2">
         <img class="fleche_g animated fadeInLeft" src="img/ligne_g.png">
         <img class="fleche_d animated fadeInRight" src="img/ligne_d.png">
@@ -75,8 +79,7 @@
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Naissance</h5>
             </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            <small>Donec id elit non mi porta.</small>
+            <p class="mb-1"><?php echo $donnees['Naissance'];?></small>
           </a>
           <a href="#" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
@@ -148,8 +151,9 @@
 
       </div>
     </div>
-
   </main>
+<?php } ?>
+
 
   <footer id="footer" class="page-footer font-small text-white mdb-color pt-4 sticky bottom">
 

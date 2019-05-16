@@ -157,6 +157,7 @@
               </a>
               <?php
                     }
+                    $reponse->closeCursor();
                     ?>
             </div>
     </div>
