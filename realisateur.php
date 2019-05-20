@@ -24,7 +24,7 @@
 <body>
   <?php
   require_once 'bdd.php';
-  $requete = "SELECT * FROM realisateurs WHERE id_realisateur=\'' . $_GET['id_realisateur'] .'\'';
+  $requete = "SELECT * FROM realisateurs WHERE id_realisateur=" . $_GET['id_realisateur'];
   $reponse = $bdd->query($requete);
   while ($donnees = $reponse) {
 
